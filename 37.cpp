@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void solveSudoku(vector<vector<char>>& board) {
+    bool solveSudoku(vector<vector<char>>& board) {
     
         return (_solveSudoku(board));
     
