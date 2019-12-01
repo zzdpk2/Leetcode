@@ -18,20 +18,24 @@ public class Sum3_15 {
         if(nums[0] > 0 || nums[nums.length-1] < 0 || nums.length < 3)
             return result;
 
-        int temp = 0, left = 0, right = 0;
+        int temp = 0, left = 0, right = 0, val = 0;
         ArrayList<Integer> tempList = new ArrayList<>();
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length - 2; i++) {
             temp = nums[i];
             left = i + 1;
             right = nums.length - 1;
-            while(left != right){
-                if(temp + nums[left] + nums[right] == 0){
+            val = -temp;
+
+            while(left < right){
+                if(nums[left] + nums[right] == val){
                     tempList.add(temp);
                     tempList.add(nums[left]);
                     tempList.add(nums[right]);
                     result.add(tempList);
                     tempList.clear();
                 }
+                right--;
+                left++;
             }
         }
 
