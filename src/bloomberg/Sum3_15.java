@@ -18,19 +18,23 @@ public class Sum3_15 {
         if(nums.length < 3)
             return result;
 
-        int temp = 0, left = 0, right = 0, val = 0;
+        int left = 0, right = 0, val = 0;
         for (int i = 0; i < nums.length - 2; i++) {
             if(i > 0 && nums[i] == nums[i-1]) continue;
-            temp = nums[i];
             left = i + 1;
             right = nums.length - 1;
-            val = -temp;
+            val = 0 - nums[i];
 
             while(left < right){
-                if(nums[left] + nums[right] == val)
-                    result.add(Arrays.asList(temp, nums[left], nums[right]));
-                right--;
-                left++;
+                if(nums[left] + nums[right] == val){
+                    result.add(Arrays.asList(val, nums[left], nums[right]));
+                    while(left < right && nums[left] == nums[left+1])   left++;
+                    while(left < right && nums[right] == nums[right-1]) right--;
+                    right--;
+                    left++;
+                }
+                if(nums[left] + nums[right] < val)  left++;
+                else    right--;
             }
         }
 
