@@ -11,5 +11,6 @@ public class GrammarTest {
         String[] testArray = {"0", "1", "2", "3"};
         List<String> strings = Arrays.asList(testArray);
         for(String element: strings) System.out.println(element);
+        System.out.println("After clear!");
     }
 }

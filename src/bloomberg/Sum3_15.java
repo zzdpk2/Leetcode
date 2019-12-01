@@ -15,7 +15,7 @@ public class Sum3_15 {
     public static List<List<Integer>> threeSum(int[] nums){
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
-        if(nums[0] > 0 || nums[nums.length-1] < 0 || nums.length < 3)
+        if(nums[0] > 0 || nums[nums.length - 1] < 0 || nums.length < 3)
             return result;
 
         int temp = 0, left = 0, right = 0, val = 0;
